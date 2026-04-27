@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil - Aguirre Osores Piero</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .perfil-hero {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      max-width: 700px;
+      margin: 3rem auto 2rem;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .perfil-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #38bdf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #0a1628;
+    }
+
+    .perfil-hero h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .perfil-hero .subtitle {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    .perfil-hero p {
+      color: #b0c4d8;
+      font-size: 0.95rem;
+    }
+
+    .perfil-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .perfil-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    .perfil-card .card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #38bdf8;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .perfil-card .card-value {
+      font-size: 15px;
+      color: #e2f0fb;
+      font-weight: 500;
+    }
+
+    .habilidades-section {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .habilidades-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.2rem;
+    }
+
+    .habilidades-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tag {
+      background: rgba(56,189,248,0.15);
+      border: 1px solid rgba(56,189,248,0.3);
+      color: #38bdf8;
+      padding: 0.45rem 1rem;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .btn-volver {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: #ccc;
+      padding: 0.6rem 1.3rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0 auto 3rem;
+      display: flex;
+      width: fit-content;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-volver:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+
+    @media (max-width: 600px) {
+      .perfil-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <img src="https://sigedo.upla.edu.pe/SIGEDO/public1/img/111.0f4c6ba1.png" alt="Logo UPLA" class="avatar" />
+    <span>Aguirre Osores Piero</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li class="dropdown">
+      <button class="btn-semanas">Semanas ▾</button>
+      <ul class="dropdown-menu">
+        <li><a href="semana1.html">Semana 1</a></li>
+        <li><a href="semana2.html">Semana 2</a></li>
+        <li><a href="semana3.html">Semana 3</a></li>
+        <li><a href="semana4.html">Semana 4</a></li>
+        <li><a href="semana5.html">Semana 5</a></li>
+        <li><a href="semana6.html">Semana 6</a></li>
+        <li><a href="semana7.html">Semana 7</a></li>
+        <li><a href="semana8.html">Semana 8</a></li>
+      </ul>
+    </li>
+    <li><a href="perfil.html" style="color:#38bdf8;">Perfil</a></li>
+  </ul>
+</nav>
+
+<!-- HERO PERFIL -->
+<div class="perfil-hero">
+  <div class="perfil-avatar">PA</div>
+  <p class="subtitle">Estudiante universitario</p>
+  <h1>Aguirre Osores Piero Edwin</h1>
+  <p>Estudiante de Ingeniería de Sistemas y Computación en la Universidad Peruana Los Andes, con interés en el desarrollo de aplicaciones y la programación orientada a objetos.</p>
+</div>
+
+<!-- CARDS DE INFO -->
+<div class="perfil-grid">
+  <div class="perfil-card">
+    <p class="card-label">Nombre completo</p>
+    <p class="card-value">Aguirre Osores Piero Edwin</p>
+  </div>
+  <div class="perfil-card">
+    <p class="card-label">Carrera</p>
+    <p class="card-value">Ingeniería de Sistemas y Computación</p>
+  </div>
+  <div class="perfil-card">
+    <p class="card-label">Universidad</p>
+    <p class="card-value">Universidad Peruana Los Andes</p>
+  </div>
+  <div class="perfil-card">
+    <p class="card-label">Ubicación</p>
+    <p class="card-value">Huancayo, Perú</p>
+  </div>
+</div>
+
+
+<!-- BOTÓN VOLVER -->
+<a href="index.html" class="btn-volver">← Volver al portafolio</a>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 <span>Aguirre Osores Piero</span> - Universidad Peruana Los Andes
+</footer>
+
+</body>
+</html>

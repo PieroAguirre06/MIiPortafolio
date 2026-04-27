@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semana 2 - Portafolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .semana-hero {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      max-width: 700px;
+      margin: 3rem auto 2rem;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      color: #fff;
+    }
+    .semana-hero .badge {
+      background: rgba(56,189,248,0.15);
+      border: 1px solid rgba(56,189,248,0.3);
+      color: #38bdf8;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .semana-hero h1 { font-size: 1.8rem; font-weight: 700; }
+    .semana-hero p { color: #b0c4d8; font-size: 0.95rem; max-width: 520px; line-height: 1.7; }
+    .trabajos-section { max-width: 700px; margin: 0 auto 2rem; }
+    .trabajos-section h2 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .trabajo-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .trabajo-card .trabajo-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.7rem; }
+    .trabajo-card .trabajo-num {
+      background: rgba(56,189,248,0.2);
+      color: #38bdf8;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .trabajo-card h3 { font-size: 1rem; font-weight: 600; color: #fff; }
+    .trabajo-card p { font-size: 14px; color: #b0c4d8; line-height: 1.7; }
+    .estado {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 12px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .estado.entregado { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+    .btn-volver {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: #ccc;
+      padding: 0.6rem 1.3rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0 auto 3rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-volver:hover { border-color: #38bdf8; color: #38bdf8; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://sigedo.upla.edu.pe/SIGEDO/public1/img/111.0f4c6ba1.png" alt="Logo UPLA" class="avatar" />
+    <span>Aguirre Osores Piero</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li class="dropdown">
+      <button class="btn-semanas">Semanas ▾</button>
+      <ul class="dropdown-menu">
+        <li><a href="semana1.html">Semana 1</a></li>
+        <li><a href="semana2.html">Semana 2</a></li>
+        <li><a href="semana3.html">Semana 3</a></li>
+        <li><a href="semana4.html">Semana 4</a></li>
+        <li><a href="semana5.html">Semana 5</a></li>
+        <li><a href="semana6.html">Semana 6</a></li>
+        <li><a href="semana7.html">Semana 7</a></li>
+        <li><a href="semana8.html">Semana 8</a></li>
+      </ul>
+    </li>
+    <li><a href="perfil.html">Perfil</a></li>
+  </ul>
+</nav>
+
+<div class="semana-hero">
+  <span class="badge">Unidad 1 · Semana 2</span>
+  <h1>Clases, Objetos y Encapsulamiento</h1>
+  <p>En esta semana se profundizó en la creación de clases y objetos en Java, aplicando el principio de encapsulamiento mediante modificadores de acceso y métodos getter/setter.</p>
+</div>
+
+<div class="trabajos-section">
+  <h2>🗂️ Trabajos realizados</h2>
+
+  <div class="trabajo-card">
+    <div class="trabajo-header">
+      <span class="trabajo-num">01</span>
+      <h3>Modelado de clases con UML</h3>
+    </div>
+    <p>Se elaboraron diagramas de clases UML para representar diferentes entidades del mundo real como Estudiante, Vehículo y Producto. Se identificaron atributos, métodos y la visibilidad de cada uno usando la notación estándar.</p>
+    <span class="estado entregado">✓ Entregado</span>
+  </div>
+
+  <div class="trabajo-card">
+    <div class="trabajo-header">
+      <span class="trabajo-num">02</span>
+      <h3>Implementación de encapsulamiento en Java</h3>
+    </div>
+    <p>Se implementó una clase "CuentaBancaria" aplicando encapsulamiento: atributos privados (saldo, titular), métodos públicos para depositar y retirar dinero, y validaciones para evitar saldos negativos.</p>
+    <span class="estado entregado">✓ Entregado</span>
+  </div>
+
+  <div class="trabajo-card">
+    <div class="trabajo-header">
+      <span class="trabajo-num">03</span>
+      <h3>Ejercicios prácticos de instanciación</h3>
+    </div>
+    <p>Se resolvieron ejercicios creando múltiples objetos a partir de una misma clase, comparando su comportamiento independiente. Se trabajó con arreglos de objetos y se mostró la información de cada instancia en consola.</p>
+    <span class="estado entregado">✓ Entregado</span>
+  </div>
+</div>
+
+<a href="index.html" class="btn-volver">← Volver al portafolio</a>
+
+<footer>
+  © 2026 <span>Aguirre Osores Piero</span> - Universidad Peruana Los Andes
+</footer>
+
+</body>
+</html>
