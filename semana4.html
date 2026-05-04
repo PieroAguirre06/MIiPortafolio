@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semana 4 - Arquitectura MVC</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .semana-hero {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      max-width: 700px;
+      margin: 3rem auto 2rem;
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #fff;
+    }
+    .semana-hero .badge {
+      background: rgba(56,189,248,0.15);
+      border: 1px solid rgba(56,189,248,0.3);
+      color: #38bdf8;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .semana-hero h1 { font-size: 1.8rem; margin-bottom: 1rem; }
+    .semana-hero p { color: #b0c4d8; max-width: 520px; margin: 0 auto; }
+    .trabajos-section { max-width: 700px; margin: 0 auto 2rem; }
+    .trabajo-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .codigo-box {
+      background: rgba(0,0,0,0.3);
+      border-radius: 8px;
+      padding: 0.8rem;
+      font-family: monospace;
+      font-size: 12px;
+      color: #7dd3fc;
+      overflow-x: auto;
+    }
+    .btn-volver {
+      display: flex;
+      width: fit-content;
+      margin: 2rem auto;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: #ccc;
+      padding: 0.6rem 1.3rem;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .btn-volver:hover { border-color: #38bdf8; color: #38bdf8; }
+    .estado {
+      display: inline-block;
+      margin-top: 1rem;
+      background: rgba(34,197,94,0.15);
+      color: #4ade80;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://sigedo.upla.edu.pe/SIGEDO/public1/img/111.0f4c6ba1.png" alt="Logo" class="avatar" />
+    <span>Aguirre Osores Piero</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li class="dropdown">
+      <button class="btn-semanas">Semanas ▾</button>
+      <ul class="dropdown-menu">
+        <li><a href="semana1.html">Semana 1</a></li>
+        <li><a href="semana2.html">Semana 2</a></li>
+        <li><a href="semana3.html">Semana 3</a></li>
+        <li><a href="semana4.html">Semana 4</a></li>
+        <li><a href="semana5.html">Semana 5</a></li>
+        <li><a href="semana6.html">Semana 6</a></li>
+        <li><a href="semana7.html">Semana 7</a></li>
+        <li><a href="semana8.html">Semana 8</a></li>
+      </ul>
+    </li>
+    <li><a href="perfil.html">Perfil</a></li>
+  </ul>
+</nav>
+
+<div class="semana-hero">
+  <span class="badge">Semana 4</span>
+  <h1>Arquitectura MVC</h1>
+  <p>Modelo - Vista - Controlador. Implementación de la arquitectura MVC en Java Swing.</p>
+</div>
+
+<div class="trabajos-section">
+  <div class="trabajo-card">
+    <h3>📦 Oferta de Tienda con MVC</h3>
+    <p>Programa que calcula el importe final a pagar por la compra de docenas de un producto.</p>
+    
+    <div class="codigo-box">
+      // MODELO: Tienda.java - Lógica de negocio
+      calcularImporteCompra() { return precioDocena * docenas; }
+      calcularDescuento() { return (docenas >= 10) ? 0.20 : 0.10; }
+      calcularLapiceros() { return (importePagar >= 200) ? 2*docenas : 0; }
+    </div>
+    
+    <p><strong>Clases:</strong> Tienda.java (Modelo), TiendaVista.java (Vista), TiendaControlador.java (Controlador)</p>
+    <p><strong>Entradas:</strong> Precio por docena | Cantidad de docenas</p>
+    <p><strong>Salidas:</strong> Importe compra, descuento, importe a pagar, lapiceros</p>
+    
+    <span class="estado">✓ Entregado</span>
+  </div>
+</div>
+
+<a href="index.html" class="btn-volver">← Volver al portafolio</a>
+
+<footer>
+  © 2026 <span>Aguirre Osores Piero</span> - Universidad Peruana Los Andes
+</footer>
+
+</body>
+</html>
