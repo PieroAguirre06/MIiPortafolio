@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semana 1 - Portafolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .semana-hero {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      max-width: 700px;
+      margin: 3rem auto 2rem;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      color: #fff;
+    }
+    .semana-hero .badge {
+      background: rgba(56,189,248,0.15);
+      border: 1px solid rgba(56,189,248,0.3);
+      color: #38bdf8;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .semana-hero h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .semana-hero p {
+      color: #b0c4d8;
+      font-size: 0.95rem;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+    .trabajos-section {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    .trabajos-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .trabajo-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .trabajo-card .trabajo-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.7rem;
+    }
+    .trabajo-card .trabajo-num {
+      background: rgba(56,189,248,0.2);
+      color: #38bdf8;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .trabajo-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .trabajo-card p {
+      font-size: 14px;
+      color: #b0c4d8;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+    .trabajo-card ul {
+      margin: 0.5rem 0 0.5rem 1.2rem;
+    }
+    .trabajo-card ul li {
+      font-size: 14px;
+      color: #b0c4d8;
+      line-height: 1.8;
+    }
+    .detalle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-top: 0.8rem;
+    }
+    .detalle-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 0.6rem 0.9rem;
+    }
+    .detalle-item .di-label {
+      font-size: 11px;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    .detalle-item .di-value {
+      font-size: 13px;
+      color: #e2f0fb;
+    }
+    .estado {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 12px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .estado.entregado {
+      background: rgba(34,197,94,0.15);
+      color: #4ade80;
+      border: 1px solid rgba(34,197,94,0.3);
+    }
+    .codigo-box {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      margin-top: 0.8rem;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: #7dd3fc;
+      overflow-x: auto;
+      white-space: pre;
+      line-height: 1.6;
+    }
+
+    /* ===== BOTONES DE ACCIÓN ===== */
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.2rem;
+    }
+    .btn-accion {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.5rem 1.1rem;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .btn-github {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .btn-github:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: #fff;
+    }
+    .btn-descargar {
+      background: rgba(56,189,248,0.15);
+      border: 1px solid rgba(56,189,248,0.35);
+      color: #38bdf8;
+    }
+    .btn-descargar:hover {
+      background: rgba(56,189,248,0.28);
+      border-color: #38bdf8;
+    }
+
+    .btn-volver {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: #ccc;
+      padding: 0.6rem 1.3rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0 auto 3rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-volver:hover {
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+
+    /* ===== PREVIEW PDF ===== */
+    .pdf-preview {
+      margin-top: 1rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.2);
+    }
+    .pdf-preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.9rem;
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: #b0c4d8;
+    }
+    .pdf-preview-header span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pdf-icon {
+      color: #f87171;
+      font-size: 14px;
+    }
+    .pdf-preview iframe {
+      width: 100%;
+      height: 420px;
+      border: none;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .detalle-grid { grid-template-columns: 1fr; }
+      .pdf-preview iframe { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://sigedo.upla.edu.pe/SIGEDO/public1/img/111.0f4c6ba1.png" alt="Logo UPLA" class="avatar" />
+    <span>Aguirre Osores Piero</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li class="dropdown">
+      <button class="btn-semanas">Semanas ▾</button>
+      <ul class="dropdown-menu">
+        <li><a href="semana1.html">Semana 1</a></li>
+        <li><a href="semana2.html">Semana 2</a></li>
+        <li><a href="semana3.html">Semana 3</a></li>
+        <li><a href="semana4.html">Semana 4</a></li>
+        <li><a href="semana5.html">Semana 5</a></li>
+        <li><a href="semana6.html">Semana 6</a></li>
+        <li><a href="semana7.html">Semana 7</a></li>
+        <li><a href="semana8.html">Semana 8</a></li>
+      </ul>
+    </li>
+    <li><a href="perfil.html">Perfil</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="semana-hero">
+  <span class="badge">Unidad 1 · Semana 1</span>
+  <h1>Desarrollo de Aplicaciones I</h1>
+  <p>Trabajos realizados durante la primera semana del curso: ejercicios de programación en Java con interfaz gráfica, guía de GitHub y manual para publicar páginas web.</p>
+</div>
+
+<!-- TRABAJOS -->
+<div class="trabajos-section">
+  <h2>🗂️ Trabajos realizados</h2>
+
+  <!-- ACTIVIDAD SEMANA 1 -->
+  <div class="trabajo-card">
+    <div class="trabajo-header">
+      <span class="trabajo-num">Ejercicio 01 y 02</span>
+      <h3>Actividad Semana 1 — Cálculo de Descuento e Inversión en Feria</h3>
+    </div>
+    <p>Dos aplicaciones Java con interfaz gráfica Swing. El primer ejercicio calcula el descuento por temporada de verano (7% + 7%) sobre la compra de camisas. El segundo distribuye una inversión en feria según porcentajes por rubro (alquiler, publicidad, transporte, servicios, decoración y gastos varios).</p>
+
+    <div class="detalle-grid">
+      <div class="detalle-item">
+        <p class="di-label">Curso</p>
+        <p class="di-value">Taller: Desarrollo de Aplicaciones I</p>
+      </div>
+      <div class="detalle-item">
+        <p class="di-label">Docente</p>
+        <p class="di-value">Mg. Fernandez Bejarano Raul Enrique</p>
+      </div>
+      <div class="detalle-item">
+        <p class="di-label">Ejercicio 01 — Entrada</p>
+        <p class="di-value">Precio unitario y cantidad de camisas</p>
+      </div>
+      <div class="detalle-item">
+        <p class="di-label">Ejercicio 01 — Salida</p>
+        <p class="di-value">Importe de compra, descuentos (7%+7%) e importe a pagar</p>
+      </div>
+      <div class="detalle-item">
+        <p class="di-label">Ejercicio 02 — Entrada</p>
+        <p class="di-value">Monto total a invertir en la feria</p>
+      </div>
+      <div class="detalle-item">
+        <p class="di-label">Ejercicio 02 — Salida</p>
+        <p class="di-value">Gastos en: alquiler, publicidad, transporte, servicios, decoración y gastos varios</p>
+      </div>
+    </div>
+
+    <p style="margin-top:1rem;">Lógica principal — Ejercicio 01 (descuento 7% + 7%):</p>
+    <div class="codigo-box">float importeCompra = precio * cantidad;
+float desc1         = 0.07f * importeCompra;
+float desc2         = 0.07f * (importeCompra - desc1);
+float descTotal     = desc1 + desc2;
+float importePagar  = importeCompra - descTotal;</div>
+
+    <p style="margin-top:1rem;">Lógica principal — Ejercicio 02 (distribución por rubros):</p>
+    <div class="codigo-box">float alquiler   = PCT_ALQUILER   * monto;  // 23%
+float publicidad = PCT_PUBLICIDAD * monto;  // 7%
+float transporte = PCT_TRANSPORTE * monto;  // 26%
+float servicios  = PCT_SERVICIOS  * monto;  // 12%
+float decoracion = PCT_DECORACION * monto;  // 21%
+float gastos     = PCT_GASTOS     * monto;  // 11%</div>
+
+    <span class="estado entregado">✓ Entregado</span>
+
+    <!-- PDF PREVIEW -->
+    <div class="pdf-preview">
+      <div class="pdf-preview-header">
+        <span><span class="pdf-icon">📄</span> ACTIVIDAD_SEMANA_1.pdf</span>
+        <a class="btn-accion btn-descargar"
+           href="pdf/ACTIVIDAD_SEMANA_1.pdf"
+           download
+           style="margin:0; padding: 0.3rem 0.8rem; font-size:12px;">
+          ↓ Descargar
+        </a>
+      </div>
+      <iframe src="pdf/ACTIVIDAD_SEMANA_1.pdf" title="Actividad Semana 1"></iframe>
+    </div>
+
+    <div class="acciones">
+      <a class="btn-accion btn-github"
+         href="https://github.com/PieroAguirre06/MIiPortafolio/blob/main/index.html"
+         target="_blank">
+        ⬡ Ver en GitHub
+      </a>
+      <a class="btn-accion btn-descargar"
+         href="pdf/ACTIVIDAD_SEMANA_1.pdf"
+         download>
+        ↓ Descargar PDF
+      </a>
+    </div>
+  </div>
+
+  <!-- GUÍA GITHUB -->
+  <div class="trabajo-card">
+    <div class="trabajo-header">
+      <span class="trabajo-num">Guía</span>
+      <h3>Guía para crear una cuenta de GitHub</h3>
+    </div>
+    <p>Documento paso a paso para registrarse en la plataforma GitHub, desde el ingreso a la página oficial hasta la configuración inicial del dashboard personal.</p>
+
+    <p style="margin-top:0.8rem;">Pasos documentados:</p>
+    <ul>
+      <li><strong style="color:#fff;">Paso 1:</strong> Ingresar a la página oficial de GitHub</li>
+      <li><strong style="color:#fff;">Paso 2:</strong> Registrarse con correo, contraseña y username</li>
+      <li><strong style="color:#fff;">Paso 3:</strong> Completar el portal de entrada con datos personales</li>
+      <li><strong style="color:#fff;">Paso 4:</strong> Resolver el captcha de verificación visual</li>
+      <li><strong style="color:#fff;">Paso 5:</strong> Ingresar el código de 8 dígitos enviado al correo</li>
+      <li><strong style="color:#fff;">Paso 6:</strong> Personalización: seleccionar "Just me" y "Student"</li>
+      <li><strong style="color:#fff;">Paso 7:</strong> Elegir el plan gratuito con "Continue for free"</li>
+      <li><strong style="color:#fff;">Paso 8:</strong> Acceder al dashboard inicial y crear el primer repositorio</li>
+    </ul>
+
+    <span class="estado entregado">✓ Entregado</span>
+
+    <!-- PDF PREVIEW -->
+    <div class="pdf-preview">
+      <div class="pdf-preview-header">
+        <span><span class="pdf-icon">📄</span> GUIA_DE_GITHUB.pdf</span>
+        <a class="btn-accion btn-descargar"
+           href="pdf/GUIA_DE_GITHUB.pdf"
+           download
+           style="margin:0; padding: 0.3rem 0.8rem; font-size:12px;">
+          ↓ Descargar
+        </a>
+      </div>
+      <iframe src="pdf/GUIA_DE_GITHUB.pdf" title="Guía de GitHub"></iframe>
+    </div>
+
+    <div class="acciones">
+      <a class="btn-accion btn-github"
+         href="https://github.com/PieroAguirre06/MIiPortafolio/blob/main/index.html"
+         target="_blank">
+        ⬡ Ver en GitHub
+      </a>
+      <a class="btn-accion btn-descargar"
+         href="pdf/GUIA_DE_GITHUB.pdf"
+         download>
+        ↓ Descargar PDF
+      </a>
+    </div>
+  </div>
+
+  <!-- MANUAL GITHUB PAGES -->
+  <div class="trabajo-card">
+    <div class="trabajo-header">
+      <span class="trabajo-num">Manual</span>
+      <h3>Manual para publicar una página web en GitHub</h3>
+    </div>
+    <p>Manual detallado con capturas de pantalla reales para publicar un proyecto web completo en GitHub, desde la preparación de archivos locales hasta la verificación del repositorio público.</p>
+
+    <p style="margin-top:0.8rem;">Pasos documentados:</p>
+    <ul>
+      <li><strong style="color:#fff;">Paso 1:</strong> Preparar los archivos locales (HTML, CSS, imágenes) en una sola carpeta con <code style="color:#7dd3fc;">index.html</code> como archivo principal</li>
+      <li><strong style="color:#fff;">Paso 2:</strong> Crear un repositorio público nuevo en GitHub</li>
+      <li><strong style="color:#fff;">Paso 3:</strong> Subir el código arrastrando los archivos al repositorio</li>
+      <li><strong style="color:#fff;">Paso 4:</strong> Verificar los repositorios desde "Mis repositorios"</li>
+    </ul>
+
+    <span class="estado entregado">✓ Entregado</span>
+
+    <!-- PDF PREVIEW -->
+    <div class="pdf-preview">
+      <div class="pdf-preview-header">
+        <span><span class="pdf-icon">📄</span> MANUAL_PARA_SUBIR_TU_PAGINA_WEB.pdf</span>
+        <a class="btn-accion btn-descargar"
+           href="pdf/MANUAL_PARA_SUBIR_TU_PAGINA_WEB.pdf"
+           download
+           style="margin:0; padding: 0.3rem 0.8rem; font-size:12px;">
+          ↓ Descargar
+        </a>
+      </div>
+      <iframe src="pdf/MANUAL_PARA_SUBIR_TU_PAGINA_WEB.pdf" title="Manual para subir página web"></iframe>
+    </div>
+
+    <div class="acciones">
+      <a class="btn-accion btn-github"
+         href="https://github.com/PieroAguirre06/MIiPortafolio/blob/main/index.html"
+         target="_blank">
+        ⬡ Ver en GitHub
+      </a>
+      <a class="btn-accion btn-descargar"
+         href="pdf/MANUAL_PARA_SUBIR_TU_PAGINA_WEB.pdf"
+         download>
+        ↓ Descargar PDF
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<a href="index.html" class="btn-volver">← Volver al portafolio</a>
+
+<footer>
+  © 2026 <span>Aguirre Osores Piero</span> - Universidad Peruana Los Andes
+</footer>
+
+</body>
+</html>

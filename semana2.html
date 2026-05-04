@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semana 2 - Portafolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .semana-hero {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      max-width: 700px;
+      margin: 3rem auto 2rem;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      color: #fff;
+    }
+    .semana-hero .badge {
+      background: rgba(56,189,248,0.15);
+      border: 1px solid rgba(56,189,248,0.3);
+      color: #38bdf8;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .semana-hero h1 { font-size: 1.8rem; font-weight: 700; }
+    .semana-hero p { color: #b0c4d8; font-size: 0.95rem; max-width: 520px; line-height: 1.7; }
+    .trabajos-section { max-width: 700px; margin: 0 auto 2rem; }
+    .trabajos-section h2 { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .trabajo-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .trabajo-card .trabajo-header { display: flex; align-items: center; gap: 10px; margin-bottom: 0.7rem; flex-wrap: wrap; }
+    .trabajo-card .trabajo-num {
+      background: rgba(56,189,248,0.2);
+      color: #38bdf8;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .trabajo-card h3 { font-size: 1rem; font-weight: 600; color: #fff; }
+    .trabajo-card p { font-size: 14px; color: #b0c4d8; line-height: 1.7; margin-bottom: 0.5rem; }
+    .trabajo-card ul { margin: 0.5rem 0 0.5rem 1.2rem; }
+    .trabajo-card ul li { font-size: 14px; color: #b0c4d8; line-height: 1.8; }
+    .codigo-box {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      margin: 0.8rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: #7dd3fc;
+      overflow-x: auto;
+      white-space: pre;
+      line-height: 1.6;
+    }
+    .estado {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 12px;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .estado.entregado { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+    
+    /* Botones de acción */
+    .acciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.2rem;
+    }
+    .btn-accion {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.5rem 1.1rem;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .btn-github {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .btn-github:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: #fff;
+    }
+    .btn-descargar {
+      background: rgba(56,189,248,0.15);
+      border: 1px solid rgba(56,189,248,0.35);
+      color: #38bdf8;
+    }
+    .btn-descargar:hover {
+      background: rgba(56,189,248,0.28);
+      border-color: #38bdf8;
+    }
+    
+    .btn-volver {
+      display: flex;
+      width: fit-content;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: #ccc;
+      padding: 0.6rem 1.3rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0 auto 3rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-volver:hover { border-color: #38bdf8; color: #38bdf8; }
+
+    /* PDF Preview */
+    .pdf-preview {
+      margin-top: 1rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.2);
+    }
+    .pdf-preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0.9rem;
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: #b0c4d8;
+    }
+    .pdf-preview-header span { display: flex; align-items: center; gap: 6px; }
+    .pdf-icon { color: #f87171; font-size: 14px; }
+    .pdf-preview iframe { width: 100%; height: 420px; border: none; display: block; }
+
+    @media (max-width: 600px) {
+      .pdf-preview iframe { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="https://sigedo.upla.edu.pe/SIGEDO/public1/img/111.0f4c6ba1.png" alt="Logo UPLA" class="avatar" />
+    <span>Aguirre Osores Piero</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li class="dropdown">
+      <button class="btn-semanas">Semanas ▾</button>
+      <ul class="dropdown-menu">
+        <li><a href="semana1.html">Semana 1</a></li>
+        <li><a href="semana2.html">Semana 2</a></li>
+        <li><a href="semana3.html">Semana 3</a></li>
+        <li><a href="semana4.html">Semana 4</a></li>
+        <li><a href="semana5.html">Semana 5</a></li>
+        <li><a href="semana6.html">Semana 6</a></li>
+        <li><a href="semana7.html">Semana 7</a></li>
+        <li><a href="semana8.html">Semana 8</a></li>
+      </ul>
+    </li>
+    <li><a href="perfil.html">Perfil</a></li>
+  </ul>
+</nav>
+
+<div class="semana-hero">
+  <span class="badge">Unidad 1 · Semana 2</span>
+  <h1>Programación Orientada a Objetos</h1>
+  <p>Ejercicios prácticos de Java con interfaz gráfica Swing: Calculadora de sueldos, inversiones, descuentos y gestión de empleados.</p>
+</div>
+
+<div class="trabajos-section">
+  <h2>🗂️ Trabajos realizados</h2>
+
+  <!-- EJERCICIO 1: PLANILLA DE VENDEDOR -->
+  <div class="trabajo-card">
+    <div class="trabajo-header">
+      <span class="trabajo-num">Ejercicio 01</span>
+      <h3>Planilla de Vendedor</h3>
+    </div>
+    <p>Programa que calcula la planilla de pago mensual de un vendedor. El sueldo básico es S/. 350.75, más una comisión del 5% del importe vendido. Se aplica un descuento del 15% del sueldo bruto por ley.</p>
+    
+    <div class="codigo-box">
+      // Fórmulas principales
+      comision = 0.05 * importeVendido;
+      sueldoBruto = SUELDO_BASICO + comision;
+      descuento = 0.15 * sueldoBruto;
+      sueldoNeto = sueldoBruto - descuento;
+    </div>
+
+    <p><strong>Clase principal:</strong> AplicaBoleta.java</p>
+    <p><strong>Entradas:</strong> Nombre del vendedor, Importe total vendido</p>
+    <p><strong>Salidas:</strong> Sueldo básico, comisión, sueldo bruto, descuento, sueldo neto</p>
+    
+    <span class="estado entregado">✓ Entregado</span>
+
+    <div class="acciones">
+      <a class="btn-accion btn-github"
+         href="https://github.com/PieroAguirre06/MIiPortafolio/blob/main/semana2.html"
+         target="_blank">
+        ⬡ Ver en GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 2: INVERSIÓN EN FERIA -->
+  <div class="trabajo-card">
+    <div class="trabajo-header">
+      <span class="trabajo-num">Ejercicio 02</span>
+      <h3>Distribución de Inversión en Feria</h3>
+    </div>
+    <p>Programa que distribuye un monto total de inversión en seis rubros según porcentajes específicos: Alquiler (23%), Publicidad (7%), Transporte (26%), Servicios (12%), Decoración (21%) y Gastos varios (11%).</p>
+    
+    <div class="codigo-box">
+      // Porcentajes establecidos
+      alquiler   = 0.23 * monto;
+      publicidad = 0.07 * monto;
+      transporte = 0.26 * monto;
+      servicios  = 0.12 * monto;
+      decoracion = 0.21 * monto;
+      gastos     = 0.11 * monto;
+    </div>
+
+    <p><strong>Clase principal:</strong> AplicaFeria.java</p>
+    <p><strong>Entrada:</strong> Nombre de la empresa, Monto total a invertir</p>
+    <p><strong>Salida:</strong> Distribución detallada por cada rubro</p>
+    
+    <span class="estado entregado">✓ Entregado</span>
+
+    <div class="acciones">
+      <a class="btn-accion btn-github"
+         href="https://github.com/PieroAguirre06/MIiPortafolio/blob/main/semana2.html"
+         target="_blank">
+        ⬡ Ver en GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 3: VENTA DE CAMISAS (7% + 7%) -->
+  <div class="trabajo-card">
+    <div class="trabajo-header">
+      <span class="trabajo-num">Ejercicio 03</span>
+      <h3>Venta de Camisas - Descuento 7% + 7%</h3>
+    </div>
+    <p>Programa que calcula el descuento por temporada de verano denominado "7% + 7%". Se aplica un primer descuento del 7% sobre el importe de compra, y un segundo descuento del 7% sobre el saldo restante.</p>
+    
+    <div class="codigo-box">
+      importeCompra = precio * cantidad;
+      desc1 = 0.07f * importeCompra;
+      desc2 = 0.07f * (importeCompra - desc1);
+      descTotal = desc1 + desc2;
+      importePagar = importeCompra - descTotal;
+    </div>
+
+    <p><strong>Clase principal:</strong> AplicaDescuento.java</p>
+    <p><strong>Entradas:</strong> Nombre del cliente, Precio unitario, Cantidad de camisas</p>
+    <p><strong>Salidas:</strong> Importe compra, Primer descuento, Segundo descuento, Descuento total, Importe a pagar</p>
+    
+    <span class="estado entregado">✓ Entregado</span>
+
+    <div class="acciones">
+      <a class="btn-accion btn-github"
+         href="https://github.com/PieroAguirre06/MIiPortafolio/blob/main/semana2.html"
+         target="_blank">
+        ⬡ Ver en GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- EJERCICIO 4: GESTIÓN DE SUELDOS -->
+  <div class="trabajo-card">
+    <div class="trabajo-header">
+      <span class="trabajo-num">Ejercicio 04</span>
+      <h3>Gestión de Sueldos por Categoría</h3>
+    </div>
+    <p>Programa que calcula el sueldo de empleados según su categoría (A o B), horas trabajadas y número de hijos. La tarifa horaria es S/.45.00 para categoría A y S/.37.50 para categoría B. Bonificación por hijos: S/.40.50 (hasta 3 hijos) o S/.35.00 (más de 3 hijos). Descuento: 13.5% si sueldo bruto ≥ S/.3500, sino 10%.</p>
+    
+    <div class="codigo-box">
+      // Tarifas por categoría
+      Categoría A: tarifa = 45.0
+      Categoría B: tarifa = 37.5
+      
+      sueldoBasico = horasTrabajadas * tarifaHoraria;
+      bonificacion = (numHijos <= 3) ? numHijos * 40.5 : numHijos * 35.0;
+      sueldoBruto = sueldoBasico + bonificacion;
+      descuento = (sueldoBruto >= 3500) ? 0.135 * sueldoBruto : 0.10 * sueldoBruto;
+      sueldoNeto = sueldoBruto - descuento;
+    </div>
+
+    <p><strong>Clase principal:</strong> GestionSueldo.java</p>
+    <p><strong>Entradas:</strong> Categoría (A/B), Horas trabajadas, Número de hijos</p>
+    <p><strong>Salidas:</strong> Sueldo básico, Bonificación, Sueldo bruto, Descuento, Sueldo neto</p>
+    
+    <span class="estado entregado">✓ Entregado</span>
+
+    <div class="acciones">
+      <a class="btn-accion btn-github"
+         href="https://github.com/PieroAguirre06/MIiPortafolio/blob/main/semana2.html"
+         target="_blank">
+        ⬡ Ver en GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- PDF COMPLETO DE LA SEMANA 2 -->
+  <div class="pdf-preview">
+    <div class="pdf-preview-header">
+      <span><span class="pdf-icon">📄</span> ACTIVIDAD_SEMANA_2.pdf</span>
+      <a class="btn-accion btn-descargar"
+         href="pdf/ACTIVIDAD_SEMANA_2.pdf"
+         download
+         style="margin:0; padding: 0.3rem 0.8rem; font-size:12px;">
+        ↓ Descargar
+      </a>
+    </div>
+    <iframe src="pdf/ACTIVIDAD_SEMANA_2.pdf" title="Actividad Semana 2"></iframe>
+  </div>
+
+</div>
+
+<a href="index.html" class="btn-volver">← Volver al portafolio</a>
+
+<footer>
+  © 2026 <span>Aguirre Osores Piero</span> - Universidad Peruana Los Andes
+</footer>
+
+</body>
+</html>

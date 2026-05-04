@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+   
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(160deg, #0a1628, #0d2137, #0a1f35);
+    background-attachment: fixed;
+    color: #333;
+    min-height: 100vh;
+  }
+   
+  /* ===== NAVBAR ===== */
+  nav {
+    background-color: rgba(10, 22, 40, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+   
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+  }
+   
+  .nav-logo .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: white;
+    padding: 3px;
+  }
+   
+  .nav-logo span {
+    font-size: 15px;
+    font-weight: 500;
+  }
+   
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+  }
+   
+  .nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+   
+  .nav-links a:hover {
+    color: #38bdf8;
+  }
+   
+  /* ===== DROPDOWN ===== */
+  .dropdown {
+    position: relative;
+  }
+   
+  .btn-semanas {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+   
+  .btn-semanas:hover {
+    border-color: #38bdf8;
+    background-color: rgba(56, 189, 248, 0.15);
+  }
+   
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    list-style: none;
+    min-width: 150px;
+    overflow: hidden;
+    z-index: 200;
+  }
+   
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+   
+  .dropdown-menu li a {
+    display: block;
+    padding: 10px 16px;
+    color: #0a1628;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+   
+  .dropdown-menu li a:hover {
+    background-color: #38bdf8;
+    color: #fff;
+  }
+   
+  /* ===== HERO ===== */
+  .hero {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    color: #fff;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 3rem auto 2rem;
+  }
+   
+  .hero img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+    padding: 6px;
+  }
+   
+  .hero .subtitle {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #38bdf8;
+    font-weight: 600;
+  }
+   
+  .hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+   
+  .hero p {
+    max-width: 560px;
+    color: #b0c4d8;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+   
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+   
+  .btn-primary {
+    background-color: #38bdf8;
+    color: #0a1628;
+    padding: 0.65rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+   
+  .btn-primary:hover {
+    background-color: #0ea5e9;
+  }
+   
+  .btn-outline {
+    background-color: transparent;
+    color: #fff;
+    padding: 0.65rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    transition: border-color 0.2s, background 0.2s;
+  }
+   
+  .btn-outline:hover {
+    border-color: #38bdf8;
+    background-color: rgba(56, 189, 248, 0.1);
+  }
+   
+  /* ===== CARDS SECTION ===== */
+  section {
+    padding: 3rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+   
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+   
+  .card {
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 1.5rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.2s, background 0.2s;
+  }
+   
+  .card:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.12);
+  }
+   
+  .card .icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+   
+  .card h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #fff;
+  }
+   
+  .card p {
+    font-size: 13px;
+    color: #b0c4d8;
+    line-height: 1.5;
+  }
+   
+  /* ===== TAREAS SEMANALES ===== */
+  #tareas {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+  }
+   
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.4rem;
+  }
+   
+  .section-header span {
+    font-size: 1.5rem;
+  }
+   
+  .section-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+  }
+   
+  .section-desc {
+    color: #b0c4d8;
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+  }
+   
+  .semanas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.9rem;
+  }
+   
+  .semana-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.2s, border-color 0.2s;
+  }
+   
+  .semana-card:hover {
+    background: #38bdf8;
+    border-color: #38bdf8;
+    color: #0a1628;
+  }
+   
+  /* ===== INFO SECTION ===== */
+  .info-section {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+  }
+   
+  .info-section h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.8rem;
+  }
+   
+  .info-section p {
+    font-size: 15px;
+    color: #b0c4d8;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+   
+  /* ===== FOOTER ===== */
+  footer {
+    background-color: rgba(10, 22, 40, 0.85);
+    color: #aaa;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 13px;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+   
+  footer span {
+    color: #38bdf8;
+  }
