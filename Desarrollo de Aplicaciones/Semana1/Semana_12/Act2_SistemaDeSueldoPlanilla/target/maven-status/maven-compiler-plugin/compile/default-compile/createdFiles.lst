@@ -1,0 +1,12 @@
+com\planilla\model\Rol.class
+com\planilla\controller\LoginServlet.class
+com\planilla\controller\RrhhServlet.class
+com\planilla\dao\UsuarioDAO.class
+com\planilla\controller\PlanillaServlet.class
+com\planilla\controller\AuthFilter.class
+com\planilla\model\CalculadoraPlanilla.class
+com\planilla\model\Empleado.class
+com\planilla\controller\LogoutServlet.class
+com\planilla\controller\AdminServlet.class
+com\planilla\model\Usuario.class
+com\planilla\dao\ConexionBD.class
